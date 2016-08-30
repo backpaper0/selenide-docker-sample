@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+        <title>echo</title>
+    </head>
+    <body>
+        <form data-th-action="@{'/post'}" method="POST">
+            <p>
+                <input type="text" name="content"/>
+                <button type="submit" name="post">Post</button>
+            </p>
+        </form>
+        <p id="echo" data-th-text="${echo}">hello</p>
+    </body>
+</html>
