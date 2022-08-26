@@ -3,17 +3,14 @@
 ## Ready
 
 ```sh
-docker-machine start dev
-gradlew build -x test
-cp build/libs/sample.jar src/docker/app/sample.jar
-cd src/docker
+mvn spring-boot:build-image -DskipTests
 docker-compose up -d
 ```
 
 ## Run test
 
 ```sh
-gradlew test
+mvn test
 ```
 
 ## License

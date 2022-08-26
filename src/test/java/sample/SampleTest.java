@@ -2,7 +2,7 @@ package sample;
 
 import static com.codeborne.selenide.Condition.*;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import com.codeborne.selenide.Selenide;
 
@@ -10,20 +10,20 @@ import sample.page.IndexPage;
 
 public class SampleTest {
 
-    @Test
-    public void test() throws Exception {
+	@Test
+	public void test() throws Exception {
 
-        IndexPage indexPage = IndexPage.open();
+		IndexPage indexPage = IndexPage.open();
 
-        indexPage.echo.shouldBe(empty);
+		indexPage.echo.shouldBe(empty);
 
-        Selenide.screenshot("init");
+		Selenide.screenshot("init");
 
-        indexPage.content.val("Hello, world!");
-        indexPage.post.click();
+		indexPage.content.val("Hello, world!");
+		indexPage.post.click();
 
-        indexPage.echo.shouldBe(text("Hello, world!"));
+		indexPage.echo.shouldBe(text("Hello, world!"));
 
-        Selenide.screenshot("echo");
-    }
+		Selenide.screenshot("echo");
+	}
 }

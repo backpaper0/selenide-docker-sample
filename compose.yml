@@ -1,0 +1,11 @@
+services:
+  app:
+    hostname: app.example.com
+    image: selenide-docker-sample:0.0.1-SNAPSHOT
+    ports:
+      - "8080:8080"
+  test:
+    build: ./src/docker/test
+    ports:
+      - "4444:4444"
+
