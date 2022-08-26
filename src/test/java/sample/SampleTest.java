@@ -15,14 +15,14 @@ public class SampleTest {
 
 		IndexPage indexPage = IndexPage.open();
 
-		indexPage.echo.shouldBe(empty);
+		indexPage.echo().shouldBe(empty);
 
 		Selenide.screenshot("init");
 
-		indexPage.content.val("Hello, world!");
-		indexPage.post.click();
+		indexPage.setContent("Hello, world!");
+		indexPage.post();
 
-		indexPage.echo.shouldBe(text("Hello, world!"));
+		indexPage.echo().shouldBe(text("Hello, world!"));
 
 		Selenide.screenshot("echo");
 	}

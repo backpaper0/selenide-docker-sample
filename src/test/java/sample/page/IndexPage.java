@@ -1,20 +1,27 @@
 package sample.page;
 
-import org.openqa.selenium.support.FindBy;
+import static com.codeborne.selenide.Selenide.*;
+
+import org.openqa.selenium.By;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 
 public class IndexPage {
 
-    @FindBy(name = "content")
-    public SelenideElement content;
-    @FindBy(name = "post")
-    public SelenideElement post;
-    @FindBy(id = "echo")
-    public SelenideElement echo;
+	public void setContent(String content) {
+		$(By.name("content")).val(content);
+	}
 
-    public static IndexPage open() {
-        return Selenide.open("/", IndexPage.class);
-    }
+	public void post() {
+		$(By.name("post")).click();
+	}
+
+	public SelenideElement echo() {
+		return $(By.id("echo"));
+	}
+
+	public static IndexPage open() {
+		return Selenide.open("/", IndexPage.class);
+	}
 }
