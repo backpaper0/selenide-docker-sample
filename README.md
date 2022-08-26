@@ -1,4 +1,4 @@
-# Selenide + Docker + Xvfb + Firefox SAMPLE
+# Selenide + Docker sample
 
 ## Ready
 
